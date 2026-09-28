@@ -1,6 +1,7 @@
 -- Datos de prueba (categorías, productos y stock).
 -- Los usuarios se crean con `npm run seed` para que las contraseñas se hasheen con bcrypt.
 USE nutribox_db;
+SET NAMES utf8mb4;
 
 INSERT INTO categories (name, description) VALUES
   ('Bowls', 'Bowls balanceados listos para comer'),

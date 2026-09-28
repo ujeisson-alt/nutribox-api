@@ -5,6 +5,7 @@
 
 CREATE DATABASE IF NOT EXISTS nutribox_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE nutribox_db;
+SET NAMES utf8mb4;
 
 DROP VIEW IF EXISTS vw_pending_orders_today;
 DROP PROCEDURE IF EXISTS sp_confirm_order;
