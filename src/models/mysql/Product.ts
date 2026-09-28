@@ -1,4 +1,4 @@
-import { DataTypes, Model, Optional } from 'sequelize';
+import { DataTypes, Model, NonAttribute, Optional } from 'sequelize';
 import { sequelize } from '../../config/database';
 import { toNumber } from '../../utils/decimal';
 
@@ -26,6 +26,9 @@ class Product
   declare price: number;
   declare categoryId: number | null;
   declare isActive: boolean;
+
+  // Asociaciones cargadas con include (ver models/mysql/index.ts)
+  declare stock?: NonAttribute<{ quantity: number } | null>;
 }
 
 Product.init(
