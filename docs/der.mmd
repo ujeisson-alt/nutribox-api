@@ -1,0 +1,56 @@
+erDiagram
+    USERS ||--o{ ORDERS : "realiza"
+    ORDERS ||--|{ ORDER_ITEMS : "contiene"
+    PRODUCTS ||--o{ ORDER_ITEMS : "aparece en"
+    CATEGORIES |o--o{ PRODUCTS : "agrupa"
+    PRODUCTS ||--|| STOCK : "tiene"
+
+    USERS {
+        int id PK
+        varchar name
+        varchar email UK
+        varchar password "bcrypt hash"
+        enum role "USER | ADMIN"
+        boolean is_active
+        datetime created_at
+        datetime updated_at
+    }
+    CATEGORIES {
+        int id PK
+        varchar name UK
+        text description
+        datetime created_at
+    }
+    PRODUCTS {
+        int id PK
+        varchar name
+        text description
+        decimal price
+        int category_id FK
+        boolean is_active
+        datetime created_at
+        datetime updated_at
+    }
+    STOCK {
+        int id PK
+        int product_id FK,UK
+        int quantity "CHECK >= 0"
+        datetime last_updated
+    }
+    ORDERS {
+        int id PK
+        int user_id FK
+        enum status "PENDING..CANCELLED"
+        decimal total
+        date delivery_date
+        text delivery_address
+        datetime created_at
+        datetime updated_at
+    }
+    ORDER_ITEMS {
+        int id PK
+        int order_id FK
+        int product_id FK
+        int quantity "CHECK > 0"
+        decimal unit_price
+    }
