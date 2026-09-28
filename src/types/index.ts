@@ -46,7 +46,6 @@ export interface AuthUser {
 
 // Extender el tipo Request de Express para incluir el usuario autenticado
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Express {
     interface Request {
       user?: AuthUser;
