@@ -77,6 +77,7 @@ npm run dev                     # http://localhost:3000
 | `FRONTEND_URL` | No | Allowed CORS origin (default `*`) |
 | `DATABASE_URL` | No* | MySQL connection string (`mysql://user:pass@host:port/db`). Overrides `DB_*` |
 | `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` | Yes* | MySQL connection (*if `DATABASE_URL` is not set) |
+| `DB_SSL`, `DB_SSL_CA` | No | `DB_SSL=true` enables TLS for managed MySQL (e.g. Aiven); `DB_SSL_CA` holds the CA certificate (PEM) to verify the server |
 | `MONGODB_URI` | Yes | MongoDB connection string |
 | `JWT_SECRET` | Yes | Secret used to sign tokens (32+ random characters in production) |
 | `JWT_EXPIRES_IN` | No | Token lifetime (default `24h`) |
